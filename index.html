@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Mozgadgets</title>
+</head>
+<style>
+    .brand {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    h1 {
+        font-weight: bolder;
+    }
+
+    header {
+        border-bottom-width: 1px;
+        border-color: rgb(51, 51, 51);
+    }
+
+    .moz {
+        animation: moz 6s ease-in-out 0s infinite normal;
+    }
+
+    @keyframes moz {
+        0% {
+            color: white;
+        }
+
+        50% {
+            color: rgb(252, 225, 104);
+        }
+
+        100% {
+            color: white;
+        }
+    }
+
+    /* Remove underlines from all links */
+    a, a:visited, a:active, a:hover {
+        text-decoration: none;
+    }
+
+    .ba:hover {
+        padding: 13px;
+        transition: all 0.5s;
+    }
+
+    .gn {
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    .wrist {
+        width: 229px;
+        height: 229px;
+    }
+
+    .card {
+        box-shadow: 10px 10px 15px black;
+        overflow: hidden;
+        border-radius: 1rem;
+        transition: transform 0.45s ease;
+    }
+
+    /* Make product images fill card area */
+    .card img {
+        width: 100% !important;
+        height: 280px !important;
+        object-fit: cover !important;
+        border-radius: 0.6rem;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+
+    /* Hide inline descriptions on cards (we'll show them in modal) */
+    .card .text-gray-300 {
+        display: none;
+    }
+
+    /* Modal styles */
+    .modal-overlay {
+        background: rgba(0,0,0,0.65);
+    }
+    .modal-content {
+        max-width: 900px;
+        width: 95%;
+        max-height: 90vh;
+        overflow: auto;
+    }
+    .modal-image {
+        width: 100%;
+        height: 80vh;
+        max-height: 80vh;
+        object-fit: cover;
+        border-radius: 0.6rem;
+        display: block;
+    }
+    .view-details-btn {
+        cursor: pointer;
+    }
+
+    /* Ensure .ba links never underline */
+    .ba, .ba:link, .ba:visited, .ba:hover, .ba:active {
+        text-decoration: none !important;
+    }
+
+    /* Card hover zoom while preserving layout */
+    .card:hover img {
+        transform: scale(1.06);
+    }
+</style>
+
+<body class="bg-black text-white">
+    <header class="bg-slate-900 shadow-lg top-0 sticky z-50">
+        <section class="max-w-7xl mx-auto flex items-center text-white px-6 ">
+
+            <!-- Logo -->
+          <a href="index.html"> <img src="img/mozgadget logo.jpeg" alt="" class="w-15 md:w-20 h-15 my-6 rounded-full object-contain"><a>
+
+            <h1 class="brand text-2xl md:text-3xl  text-yellow-500 z-50 ">
+                <span class="text-white moz">Moz</span>Gadgets
+            </h1>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex text-xl flex-row gap-8 py-4 nav flex-1 justify-end">
+                <a href="#home" class="hover:text-yellow-400 duration-300">Home</a>
+                <a href="#about" class="hover:text-yellow-400 duration-300">About</a>
+                <a href="#inventory" class="hover:text-yellow-400 duration-300">Inventory</a>
+                <a href="#testimonies" class="hover:text-yellow-400 duration-300">Testimonies</a>
+                <a href="#contact" class="hover:text-yellow-400 duration-300">Contact Us</a>
+            </nav>
+
+            <!-- Hamburger Button -->
+            <button id="menu-btn" class="lg:hidden flex flex-col gap-1 z-50 relative cursor-pointer ml-10">
+
+                <span class="line1 w-8 h-1 bg-white rounded duration-300"></span>
+
+                <span class="line2 w-8 h-1 bg-white rounded duration-300"></span>
+
+                <span class="line3 w-8 h-1 bg-white rounded duration-300"></span>
+            </button>
+        </section>
+
+        <!-- Mobile Fullscreen Menu -->
+        <div id="mobile-menu"
+            class="fixed top-0 left-[-100%] w-full h-screen bg-slate-900 duration-500 ease-in-out flex items-center justify-center lg:hidden z-40 pb-10">
+
+            <ul class="flex flex-col text-center gap-10 text-3xl font-semibold">
+
+                <li>
+                    <a href="#home" class="mobile-link hover:text-yellow-400 duration-300 hover:none">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about" class="mobile-link hover:text-yellow-400 duration-300 hover:none">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#inventory" class="mobile-link hover:text-yellow-400 duration-300">
+                        Inventory
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#testimonies" class="mobile-link hover:text-yellow-400 duration-300">
+                        Testimonies
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact" class="mobile-link hover:text-yellow-400 duration-300">
+                        Contact Us
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </header>
+
+
+    <section id="home" class="scroll-mt-16 relative" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <main class="relative z-10 max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-8 px-6 py-24">
+
+            <div class="md:w-1/2 text-center md:text-left">
+                <p class="text-3xl md:text-4xl font-semibold leading-relaxed mb-6 md:mb-8 text-white drop-shadow-lg">
+                    Upgrade your setup with gadgets that actually hit different. <br>
+                    Clean, smart, and affordable — no stress, just vibes. <br>
+                    Tap in now and level up your lifestyle 🚀
+                </p>
+                
+                <div class="flex flex-wrap gap-5">
+                <a href="#inventory"
+                    class="ba mt-4 md:mt-6 py-4 px-6 bg-yellow-700 text-white rounded-xl hover:opacity-90 transition text-lg font-medium">
+                    Explore Products
+                </a>
+                <a href="#contact"
+                    class="ba mt-4 md:mt-6 px-6 ml-5 py-4 bg-transparent border border-yellow-700 text-yellow-300 rounded-xl hover:opacity-90 transition text-lg font-medium">
+                    Contact Us
+                </a>
+                </div>
+            </div>
+
+
+            <div class="md:w-1/2 flex justify-center">
+                <img src="img/gadgets.jpg" class=" md:block w-full max-w-lg rounded-2xl shadow-2xl  object-cover">
+            </div>
+
+        </main>
+    </section>
+
+    <section id="inventory" class="bg-gray-800 text-white py-16 flex justify-center  scroll-mt-16">
+        <main class="max-w-7xl w-full px-6 text-center">
+
+            <!-- Header -->
+            <h2 class="text-3xl font-bold text-yellow-400 mb-4">
+                ✨ Smart Selections
+            </h2>
+
+            <h3 class="text-4xl font-bold  leading-snug">
+                Upgrade Your Everyday Life with Our <br class="hidden md:block">
+                Premium Gadget Collection
+            </h3>
+            <p class="mb-10 pt-5 text-xl text-gray-300 italic">Please contact <a href="https://wa.me/2349069558651" class="text-yellow-600">Mozgadgets</a> to purchase any of these products.</p>
+
+            <!-- Filter Bar -->
+            <div class="flex flex-wrap gap-3 justify-center mb-8" id="filterBar">
+                <button data-filter="all" class="filter-btn bg-slate-700 text-white px-4 py-2 rounded-full">All</button>
+                <button data-filter="phones" class="filter-btn bg-transparent border border-slate-600 text-white px-4 py-2 rounded-full cursor-pointer">Phones</button>
+                <button data-filter="iphone" class="filter-btn bg-transparent border border-slate-600 text-white px-4 py-2 rounded-full cursor-pointer">iPhone</button>
+                <button data-filter="samsung" class="filter-btn bg-transparent border border-slate-600 text-white px-4 py-2 rounded-full cursor-pointer">Samsung</button>
+                <button data-filter="laptops" class="filter-btn bg-transparent border border-slate-600 text-white px-4 py-2 rounded-full cursor-pointer">Laptops</button>
+                <button data-filter="watches" class="filter-btn bg-transparent border border-slate-600 text-white px-4 py-2 rounded-full cursor-pointer">Watches</button>
+                <button data-filter="headphones" class="filter-btn bg-transparent border border-slate-600 text-white px-4 py-2 rounded-full cursor-pointer">Headphones</button>
+            </div>
+
+
+
+            <!-- FIRST PRODUCTS -->
+            <div id="initialProducts" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+
+                <!-- Product 1 -->
+                <div
+                    data-category="phones iphone"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card" >
+
+                    <img src="img/17air.jpeg" alt="iPhone 17 air" class="mx-auto mb-4 ">
+
+                    <h4 class="text-xl font-semibold mb-2">Iphone 17 Air (eSIMFU) </h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>256GB / 512GB Storage</p>
+                        <p>eSIM Only</p>
+                        <p>Ultra-Slim Titanium Design</p>
+                        <p>Apple A19 Chip</p>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div
+                    data-category="watches"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+
+                    <img src="img/smartwatch.jpeg" alt="Smart Watch" class="mx-auto mb-4">
+
+                    <h4 class="text-xl font-semibold mb-2">Apple Watch Series</h4>
+
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>S9 Chip for Faster Performance & Smooth Animations</p>
+                        <p>Always-On Retina Display (Up to 2000 nits Brightness)</p>
+                        <p>18 Hours All-Day Battery Life</p>
+                        <p>Double Tap Gesture for One-Hand Control</p>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div
+                    data-category="headphones"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+
+                    <img src="img/headphones.jpeg" alt="Headphones" class="mx-auto mb-4 ">
+    
+                    
+                    <h4 class="text-xl font-semibold mb-2">Sony WH-1000XM5</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>30 Hours Battery Life</p>
+                        <p>Industry-Leading Noise Cancellation</p>
+                        <p>Hi-Res Audio & LDAC Support</p>
+                        <p>Bluetooth 5.2 Multipoint Connection</p>
+                    </div>
+                </div>
+
+
+                <!-- Product 4 -->
+                <div
+                    data-category="laptops"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+
+                    <img src="img/zbook.jpeg" alt="Laptop" class="mx-auto mb-4">
+
+                    <h4 class="text-xl font-semibold mb-3">Hp Zbook Power G8</h4>
+
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>11th Gen Intel Core H-Series Processors (Up to i9, High Performance)</p>
+                        <p>NVIDIA RTX A2000 / T1200 GPU Options (Workstation Graphics)</p>
+                        <p>15.6" FHD or 4K DreamColor Display Options</p>
+                        <p>Up to 64GB RAM & Dual SSD Storage Support</p>
+                    </div>
+                </div>
+
+                <div
+                    data-category="phones iphone"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+
+                    <img src="img/Iphone 15 pro max.jpg" alt="iPhone 15 Pro Max" class="mx-auto mb-4  ">
+
+                    <h4 class="text-xl font-semibold mb-4">iPhone 15 Pro Max</h4>
+
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>256GB Storage</p>
+                        <p>Physical SIM + eSIM</p>
+                        <p>UK Variant 🇬🇧</p>
+                        <p>A17 Pro Chip</p>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div
+                    data-category="phones iphone"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+
+                    <img src="img/iphone 14 pro.jpg" alt="iPhone 14 Pro" class="mx-auto mb-4">
+
+                    <h4 class="text-xl font-semibold mb-4">iPhone 14 Pro</h4>
+
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>128GB Storage</p>
+                        <p>Physical SIM + eSIM</p>
+                        <p>UK Variant 🇬🇧</p>
+                        <p>Dynamic Island</p>
+                    </div>
+                </div>
+
+                
+                
+            </div>
+
+            <!-- HIDDEN PRODUCTS -->
+
+
+            <div id="moreProducts"
+                class="grid  grid-cols-1 sm:grid-cols-2 mt-12 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center ">
+
+                <!-- Product 1 -->
+                
+
+                <!-- Product 3 -->
+                <div
+                    data-category="iphone phones"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+
+                    <img src="img/iphone 13.jpeg" alt="iPhone 13" class="mx-auto mb-4">
+
+                    <h4 class="text-xl font-semibold mb-4">iPhone 13</h4>
+
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>256GB Storage</p>
+                        <p>Physical SIM + eSIM</p>
+                        <p>UK Variant 🇬🇧</p>
+                        <p>Super Retina XDR Display</p>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div
+                    data-category="iphone phones"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+
+                    <img src="img/iphone 12 pro max.jpg" alt="iPhone 12 Pro Max" class="mx-auto mb-4">
+
+                    <h4 class="text-xl font-semibold mb-4">iPhone 12 Pro Max</h4>
+
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>256GB Storage</p>
+                        <p>Physical SIM + eSIM</p>
+                        <p>UK Variant 🇬🇧</p>
+                        <p>Triple Camera System</p>
+                    </div>
+                </div>
+
+<div class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center hover:scale-105 transition duration-300 w-full max-w-xs"
+data-category="samsung phones">
+
+    <img src="img/s23 ultra.jpg" alt="Samsung S23 Ultra" class="mx-auto mb-4">
+
+    <h4 class="text-xl font-semibold mb-4">Samsung S23 Ultra</h4>
+
+    <div class="text-gray-300 text-sm space-y-2">
+        <p>256GB / 512GB Storage</p>
+        <p>UK Used 🇬🇧 &amp; Brand New</p>
+        <p>200MP Pro Camera</p>
+        <p>Snapdragon Performance</p>
+    </div>
+</div>
+
+<div class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center hover:scale-105 transition duration-300 w-full max-w-xs"
+data-category="samsung phones">
+
+    <img src="img/s24ultra.jpg" alt="Samsung S24 Ultra" class="mx-auto mb-4">
+
+    <h4 class="text-xl font-semibold mb-4">Samsung S24 Ultra</h4>
+
+    <div class="text-gray-300 text-sm space-y-2">
+        <p>256GB Storage</p>
+        <p>Galaxy AI Features</p>
+        <p>Titanium Frame Design</p>
+        <p>UK Used 🇬🇧 &amp; Brand New</p>
+    </div>
+</div>
+
+<div class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center hover:scale-105 transition duration-300 w-full max-w-xs"
+data-category="samsung phones">
+
+    <img src="img/samsung fold 5.jpg" alt="Samsung Fold 5" class="mx-auto mb-4">
+
+    <h4 class="text-xl font-semibold mb-4">Samsung Fold 5</h4>
+
+    <div class="text-gray-300 text-sm space-y-2">
+        <p>256GB / 512GB Storage</p>
+        <p>Foldable AMOLED Display</p>
+        <p>Premium Multitasking</p>
+        <p>UK Used 🇬🇧 &amp; Brand New</p>
+    </div>
+</div>
+
+<!-- Samsung Product 4 -->
+<div
+    data-category="samsung phones"
+    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+
+    <img src="img/samsung note 20 ultra.jpg" alt="Samsung Note 20 Ultra" class="mx-auto mb-4">
+
+    <h4 class="text-xl font-semibold mb-4">Samsung Note 20 Ultra</h4>
+
+    <div class="text-gray-300 text-sm space-y-2">
+        <p>128GB / 256GB Storage</p>
+        <p>S-Pen Productivity</p>
+        <p>120Hz AMOLED Display</p>
+        <p>UK Used 🇬🇧 & Brand New</p>
+    </div>
+
+</div>
+
+            </div>
+
+            <!-- VIEW MORE BUTTON -->
+            <div class="mt-12 flex justify-center flex-wrap gap-5">
+                <button id="viewMoreBtn"
+                    class="bg-yellow-400 text-black px-8 py-3 rounded-full font-bold hover:bg-yellow-300 transition duration-300 cursor-pointer">
+
+                    Show More
+                </button>
+                                  <a href="https://wa.me/2349039242803" id="chatBtn" class="ml-4 bg-gray-900 text-white px-8 py-3 rounded-full font-bold hover:bg-gray-600 transition duration-300 text-center justify-center">
+                    Chat on WhatsApp for more products
+                </a>
+                
+                
+            </div>
+
+        </main>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="bg-gradient-to-r from-slate-900 via-gray-800 to-black text-white py-16 scroll-mt-16">
+        <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+            <div class="space-y-6">
+                <h2 class="text-4xl font-extrabold text-yellow-400">About Mozgadgets</h2>
+                <p class="text-lg text-gray-300">Mozgadgets curates a thoughtful selection of premium gadgets — phones, laptops, watches and accessories — with an emphasis on quality, honest grading, and dependable service. We source the best devices, inspect every unit, and make sure you get value for your money.</p>
+
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+                    <li class="inline-flex items-center gap-3 text-gray-300"><span class="inline-block w-3 h-3 bg-yellow-400 rounded-full"></span> Verified devices</li>
+                    <li class="inline-flex items-center gap-3 text-gray-300"><span class="inline-block w-3 h-3 bg-yellow-400 rounded-full"></span> Fast nationwide delivery</li>
+                    <li class="inline-flex items-center gap-3 text-gray-300"><span class="inline-block w-3 h-3 bg-yellow-400 rounded-full"></span> Transparent grading & warranty</li>
+                    <li class="inline-flex items-center gap-3 text-gray-300"><span class="inline-block w-3 h-3 bg-yellow-400 rounded-full"></span> Friendly support</li>
+                </ul>
+
+                <div class="mt-6 flex gap-4 flex-wrap">
+                    <a href="#inventory" class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-300">Shop Now</a>
+                    <a href="#contact" class="border border-gray-600 px-6 py-3 rounded-full text-gray-200 hover:bg-gray-800">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-800 to-slate-900 p-1">
+                <img src="img/about mozgadgets.jpg" alt="About Mozgadgets" class="w-full h-full object-cover rounded-xl">
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonies" class=" mx-auto text-center  scroll-mt-16 text-4xl pt-15">
+        <h1>Testimonies</h1>
+
+        <figure class="my-12 max-w-7xl mx-auto">
+            <blockquote class="relative rounded-3xl bg-teal-600 py-12 pl-14 pr-8 dark:bg-black">
+                <p
+                    class="mt-2 text-left text-2xl text-white before:absolute before:top-0 before:left-0 before:translate-x-2 before:translate-y-2 before:transform before:font-serif before:text-9xl before:text-white before:opacity-25 before:content-['\201C'] after:absolute after:-bottom-20 after:right-0 after:-translate-x-2 after:-translate-y-2 after:transform after:font-serif after:text-9xl after:text-white after:opacity-25 after:content-['\201D'] dark:text-slate-400 sm:text-3xl">
+                    I bought a iphone 13 from Mozgadgets and it cme exactly as described. Battery health was 88%, no
+                    hidden fault, 0 issues, products from Mozgadgets are quality products 💯.
+                </p>
+            </blockquote>
+            <figcaption class="darK:text-slate-400 mt-2 text-right text-xl italic text-slate-500 sm:text-2xl">
+                &#8212;&nbsp;Chinedu, lekki
+            </figcaption>
+
+            <figure class="my-12 max-w-7xl mx-auto">
+                <blockquote class="relative rounded-3xl bg-teal-600 py-12 pl-14 pr-8 dark:bg-black">
+                    <p
+                        class="mt-2 text-left text-2xl text-white before:absolute before:top-0 before:left-0 before:translate-x-2 before:translate-y-2 before:transform before:font-serif before:text-9xl before:text-white before:opacity-25 before:content-['\201C'] after:absolute after:-bottom-20 after:right-0 after:-translate-x-2 after:-translate-y-2 after:transform after:font-serif after:text-9xl after:text-white after:opacity-25 after:content-['\201D'] dark:text-slate-400 sm:text-3xl">
+                        I checked three shops before calling Mozgadgets. Their products are quality with an unbeatable
+                        pric, they also told me the differences between uk used and brand new gadgets 👍.
+                    </p>
+                </blockquote>
+                <figcaption class="darK:text-slate-400 mt-2 text-right text-xl italic text-slate-500 sm:text-2xl">
+                    &#8212;&nbsp;Tolu Ogba
+                </figcaption>
+
+                <figure class="my-12 max-w-7xl mx-auto">
+                    <blockquote class="relative rounded-3xl bg-teal-600 py-12 pl-14 pr-8 dark:bg-black">
+                        <p
+                            class="mt-2 text-left text-2xl text-white before:absolute before:top-0 before:left-0 before:translate-x-2 before:translate-y-2 before:transform before:font-serif before:text-9xl before:text-white before:opacity-25 before:content-['\201C'] after:absolute after:-bottom-20 after:right-0 after:-translate-x-2 after:-translate-y-2 after:transform after:font-serif after:text-9xl after:text-white after:opacity-25 after:content-['\201D'] dark:text-slate-400 sm:text-3xl">
+                            I was scared of buying online but the sent me videos before i paid. everything matched will
+                            be coming back for my laptop
+                        </p>
+                    </blockquote>
+                    <figcaption class="darK:text-slate-400 mt-2 text-right text-xl italic text-slate-500 sm:text-2xl">
+                        &#8212;&nbsp;favour, maryland
+                    </figcaption>
+
+    </section>
+    <section class="py-12 scroll-mt-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-white text-2xl md:text-3xl font-bold mb-8 text-center">Frequently Asked
+                Questions</h2>
+            <p class="text-slate-400 text-xl text-center mb-5">Here are some common questions about our
+                products.</p>
+
+            <div class="max-w-4xl mx-auto">
+
+            <div class=" mb-4">
+                <details
+                    class="group bg-slate-900 rounded-lg p-4 cursor-pointer select-none transition-all duration-300 hover:bg-slate-800">
+                    <summary class="text-white font-semibold text-lg list-none flex justify-between items-center">
+                        Are your products original or UK/used?
+                        <span
+                            class="transition-transform duration-300 group-open:rotate-45 text-amber-400 text-4xl">+</span>
+                    </summary>
+                    <p class="text-slate-400 mt-2 leading-relaxed">Yes, We clearly state if a product is brand new. Uk
+                        used, or open box. Every phones goes through a 15 point check before we sell it.No refurbished
+                        or fake devices. you can test on pickup or delivery in lagos
+
+                    </p>
+                </details>
+            </div>
+
+            <div class="space-y-4 mb-4">
+                <details
+                    class="group bg-slate-900 rounded-lg p-4 cursor-pointer select-none transition-all duration-300 hover:bg-slate-800">
+                    <summary class="text-white font-semibold text-lg list-none flex justify-between items-center">
+                        Do you offer warranty and returns
+                        <span
+                            class="transition-transform duration-300 group-open:rotate-45 text-amber-400 text-4xl">+</span>
+                    </summary>
+                    <p class="text-slate-400 mt-2 leading-relaxed">Yes, All phones comes with a 7-30days warranty
+                        depending on the grade. if you have any issues within the warranty period, we repair or replace
+                        it free. Accesories have 7 days warranty.</p>
+                </details>
+            </div>
+
+            <div class="space-y-4 mb-4">
+                <details
+                    class="group bg-slate-900 rounded-lg p-4 cursor-pointer select-none transition-all duration-300 hover:bg-slate-800">
+                    <summary class="text-white font-semibold text-lg list-none flex justify-between items-center">
+                        Can I sell my phone to you?
+                        <span
+                            class="transition-transform duration-300 group-open:rotate-45 text-amber-400 text-4xl">+</span>
+                    </summary>
+                    <p class="text-slate-400 mt-2 leading-relaxed">We buy used phones from individuals
+                        and businesses, offering fair market value for your pre-owned phones.</p>
+                </details>
+            </div>
+
+            <div class="space-y-4 mb-4">
+                <details
+                    class="group bg-slate-900 rounded-lg p-4 cursor-pointer select-none transition-all duration-300 hover:bg-slate-800">
+                    <summary class="text-white font-semibold text-lg list-none flex justify-between items-center">
+                        Can I pay on delivery?
+                        <span
+                            class="transition-transform duration-300 group-open:rotate-45 text-amber-400 text-4xl">+</span>
+                    </summary>
+                    <p class="text-slate-400 mt-2 leading-relaxed">Yes,For lagos orders only,you pay when the rider gets
+                        to you and confirm your item is okay.For other state we require 50% deposit before delivery
+                        balance on delivery
+                    </p>
+                </details>
+            </div>
+
+            <div class="space-y-4 mb-4">
+                <details
+                    class="group bg-slate-900 rounded-lg p-4 cursor-pointer select-none transition-all duration-300 hover:bg-slate-800">
+                    <summary class="text-white font-semibold text-lg list-none flex justify-between items-center">
+                        Do you deliver nationwide?
+                        <span
+                            class="transition-transform duration-300 group-open:rotate-45 text-amber-400 text-4xl">+</span>
+                    </summary>
+                    <p class="text-slate-400 mt-2 leading-relaxed">Yes, we offer secure and reliable
+                        nationwide delivery services ensuring your phones arrives safely at your
+                        location.</p>
+                </details>
+            </div>
+
+            <div class="space-y-4 mb-4">
+                <details
+                    class="group bg-slate-900 rounded-lg p-4 cursor-pointer select-none transition-all duration-300 hover:bg-slate-800">
+                    <summary class="text-white font-semibold text-lg list-none flex justify-between items-center">
+                        Can i trade my old phone to get a new one?
+                        <span
+                            class="transition-transform duration-300 group-open:rotate-45 text-amber-400 text-4xl">+</span>
+                    </summary>
+                    <p class="text-slate-400 mt-2 leading-relaxed">
+                        Yes, send us your phone details and clear pics and video . We will give a trade-in value and you
+                        can top up for an upgrade.</p>
+                </details>
+            </div>
+
+            <div class="space-y-4 mb-4">
+                <details
+                    class="group bg-slate-900 rounded-lg p-4 cursor-pointer select-none transition-all duration-300 hover:bg-slate-800">
+                    <summary class="text-white font-semibold text-lg list-none flex justify-between items-center">
+                        Do you sell accessories and what brands do you stock?
+                        <span
+                            class="transition-transform duration-300 group-open:rotate-45 text-amber-400 text-4xl">+</span>
+                    </summary>
+                    <p class="text-slate-400 mt-2 leading-relaxed">Yes,We stock original and highly quality alternative
+                        for iphones,samsung,tecno,infinix,and other power bank,screen guardand all are tested before
+                        sale
+
+                        process.</p>
+                </details>
+            </div>
+
+            <div class="space-y-4 mb-4">
+                <details
+                    class="group bg-slate-900 rounded-lg p-4 cursor-pointer select-none transition-all duration-300 hover:bg-slate-800">
+                    <summary class="text-white font-semibold text-lg list-none flex justify-between items-center">
+                        Do you offer reciept after an item is being bought?
+                        <span
+                            class="transition-transform duration-300 group-open:rotate-45 text-amber-400 text-4xl">+</span>
+                    </summary>
+                    <p class="text-slate-400 mt-2 leading-relaxed">Yes,This will indicate that you have make adeal with
+                        us and this receipt will be provided incase you have an issues with the phone before he given
+                        date of the warranty.
+                    </p>
+                </details>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6 scroll-mt-16 text-white">
+
+        <!-- Header -->
+        <div class="max-w-6xl mx-auto text-center mb-14">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 ">
+                Let's Get You Plugged🔌
+            </h2>
+            <p class=" max-w-x7l mx-auto o translate-y-6 ">
+            Looking for premium gadgets, smart accessories, or reliable devices? We’re here to keep you connected with quality tech at the best value.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10 text-white max-w-7xl mx-auto p-4">
+
+            <!-- LEFT INFO -->
+            <div class="space-y-6  translate-x-[-30px] animate-[slideInLeft_0.9s_ease_0.3s_forwards]">
+
+                
+
+                    <div
+                        class="p-6 rounded-2xl border border-gray-800 bg-gray-900/30 transition duration-300 hover:-translate-y-1 hover:bg-gray-900/50">
+                        <h3 class="text-xl font-semibold mb-2">Email ✉️</h3>
+                        <a href="mailto:hopemoses390@gmail.com" class="text-gray-400">hopemoses390@gmail.com</a>
+                    </div>
+                
+
+                    <div
+                        class="p-6 rounded-2xl border border-gray-800 bg-gray-900/30 transition duration-300 hover:-translate-y-1 hover:bg-gray-900/50">
+                        <h3 class="text-xl font-semibold mb-2">Phone 📲</h3>
+                        <a href="tel:+2349039242803" class="text-gray-400">+234 903 924 2803</a>
+                    </div>
+                    
+                <div
+                    class="p-6 rounded-2xl border border-gray-800  transition duration-300 hover:-translate-y-1 hover:bg-gray-900/50">
+                    <h3 class="text-xl font-semibold mb-2">Location 📍</h3>
+                    <p class="text-gray-400">12 pepple street, computer village, Ikeja, Lagos</p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT FORM -->
+            <form
+                class="space-y-5 p-8 rounded-2xl border border-gray-800 bg-gray-900/40 shadow-xl  translate-x-[30px] animate-[slideInRight_0.9s_ease_0.3s_forwards]"
+                action="https://formspree.io/f/mlgzyyjb"
+  method="POST">
+
+                <div>
+                    <label class="text-sm text-gray-400">Name</label>
+                    <input type="text" placeholder="Your name" name="name" class="w-full mt-2 p-3 rounded-xl bg-black border border-gray-700
+          transition duration-300 focus:border-white focus:ring-2 focus:ring-white/20 focus:scale-[1.02] outline-none">
+                </div>
+
+                <div>
+                    <label class="text-sm text-gray-400">Email</label>
+                    <input type="email" placeholder="Your email" name="Email" class="w-full mt-2 p-3 rounded-xl bg-black border border-gray-700
+          transition duration-300 focus:border-white focus:ring-2 focus:ring-white/20 focus:scale-[1.02] outline-none">
+                </div>
+
+                <div>
+                    <label class="text-sm text-gray-400">Message</label>
+                    <textarea rows="5" placeholder="Tell us what you need..." name="Message"
+                        class="w-full mt-2 p-3 rounded-xl bg-black border border-gray-700
+          transition duration-300 focus:border-white focus:ring-2 focus:ring-white/20 focus:scale-[1.02] outline-none"></textarea>
+                </div>
+
+                <button class="w-full py-3 rounded-xl bg-white text-black font-semibold
+        transition duration-300 hover:scale-[1.03] hover:bg-gray-200 active:scale-[0.98]" type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+    <!-- Product Details Modal -->
+    <div id="productModal" class="hidden fixed inset-0 items-center justify-center modal-overlay z-50">
+        <div class="modal-content bg-gray-900 rounded-xl p-6 text-white mx-4">
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="modal-title text-2xl font-bold"></h3>
+                <button class="modal-close text-2xl font-bold cursor-pointer">&times;</button>
+            </div>
+            <div class="flex flex-col gap-6 items-start">
+                <img src="" alt="" class="modal-image">
+                <div class="modal-body text-gray-300"></div>
+            </div>
+            <div class="mt-6 text-right">
+                <a href="https://wa.me/+2349039242803" target="_blank" class="bg-yellow-400 text-black px-5 py-2 rounded-full font-bold">Contact to Buy</a>
+            </div>
+        </div>
+    </div>
+
+<!-- FOOTER -->
+<footer class="bg-slate-900 border-t border-gray-800 py-10 px-6 text-gray-400">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
+
+        <!-- Brand -->
+        <div>
+            <h2 class="text-2xl font-bold text-yellow-400 mb-3">
+                <span class="text-white">Moz</span>gadgets
+            </h2>
+
+            <p class="leading-relaxed">
+                Premium gadgets, trusted quality, and smooth delivery across Nigeria.
+                Upgrade your lifestyle with devices that truly stand out.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+            <h3 class="text-white text-xl font-semibold mb-4">Quick Links</h3>
+
+            <ul class="space-y-3">
+                <li>
+                    <a href="#home" class="hover:text-yellow-400 transition duration-300">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about" class="hover:text-yellow-400 transition duration-300">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#inventory" class="hover:text-yellow-400 transition duration-300">
+                        Inventory
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#testimonies" class="hover:text-yellow-400 transition duration-300">
+                        Testimonies
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact" class="hover:text-yellow-400 transition duration-300">
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+            <h3 class="text-white text-xl font-semibold mb-4">Contact</h3>
+
+            <div class="space-y-3">
+                <p>📍 12 pepple street computer village, Ikeja, Lagos</p>
+
+                <a href="tel:+2349039242803"
+                    class="block hover:text-yellow-400 transition duration-300">
+                    📞 +234 903 924 2803
+                </a>
+
+                <a href="mailto:hopemoses390@gmail.com"
+                    class="block hover:text-yellow-400 transition duration-300">
+                    ✉️ hopemoses390@gmail.com
+                </a>
+
+                <a href="https://wa.me/+2349039242803"
+                    class="block hover:text-yellow-400 transition duration-300">
+                    💬 Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-gray-800 mt-10 pt-6 text-center text-sm text-gray-500">
+        © <span id="currentYear"></span> Mozgadgets. All rights reserved.
+    </div>
+</footer>
+
+</body>
+    <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileLinks = document.querySelectorAll(".mobile-link");
+
+    const line1 = document.querySelector(".line1");
+    const line2 = document.querySelector(".line2");
+    const line3 = document.querySelector(".line3");
+
+    let menuOpen = false;
+
+    menuBtn.addEventListener("click", () => {
+
+        if (!menuOpen) {
+
+            mobileMenu.classList.remove("left-[-100%]");
+            mobileMenu.classList.add("left-0");
+
+            // Hamburger Animation
+            line1.classList.add("rotate-45", "translate-y-2");
+            line2.classList.add("opacity-0");
+            line3.classList.add("-rotate-45", "-translate-y-2");
+
+            menuOpen = true;
+
+        } else {
+
+            mobileMenu.classList.remove("left-0");
+            mobileMenu.classList.add("left-[-100%]");
+
+            // Reset Hamburger
+            line1.classList.remove("rotate-45", "translate-y-2");
+            line2.classList.remove("opacity-0");
+            line3.classList.remove("-rotate-45", "-translate-y-2");
+
+            menuOpen = false;
+        }
+    });
+
+    // Close menu when a link is clicked
+    mobileLinks.forEach(link => {
+        link.addEventListener("click", () => {
+
+            mobileMenu.classList.remove("left-0");
+            mobileMenu.classList.add("left-[-100%]");
+
+            line1.classList.remove("rotate-45", "translate-y-2");
+            line2.classList.remove("opacity-0");
+            line3.classList.remove("-rotate-45", "-translate-y-2");
+
+            menuOpen = false;
+        });
+    });
+
+    // Inject "View Details" buttons into each product card, wire up modal, and add filter logic
+    (function () {
+        const modal = document.getElementById('productModal');
+        if (!modal) return;
+
+        const modalImage = modal.querySelector('.modal-image');
+        const modalTitle = modal.querySelector('.modal-title');
+        const modalBody = modal.querySelector('.modal-body');
+
+        const allCards = Array.from(document.querySelectorAll('.card'));
+
+        // Add view details button and build modal description as badges
+        allCards.forEach(card => {
+            const btn = document.createElement('button');
+            btn.className = 'view-details-btn mt-4 px-4 py-2 rounded-full bg-yellow-400 text-black font-semibold hover:bg-yellow-300 transition';
+            btn.innerText = 'View Details';
+
+            btn.addEventListener('click', () => {
+                const img = card.querySelector('img');
+                const titleEl = card.querySelector('h4');
+                const descEl = card.querySelector('.text-gray-300');
+
+                modalImage.src = img ? img.src : '';
+                modalImage.alt = titleEl ? titleEl.innerText : '';
+                modalTitle.textContent = titleEl ? titleEl.innerText : '';
+
+                // Build styled badges for each description line
+                modalBody.innerHTML = '';
+                if (descEl) {
+                    // find <p> children if present
+                    const parts = descEl.querySelectorAll('p');
+                    if (parts.length) {
+                        parts.forEach(p => {
+                            const span = document.createElement('span');
+                            span.className = 'inline-block bg-slate-700 text-white text-sm px-3 py-1 rounded-full mr-2 mb-2';
+                            span.textContent = p.textContent.trim();
+                            modalBody.appendChild(span);
+                        });
+                    } else {
+                        const span = document.createElement('span');
+                        span.className = 'inline-block bg-slate-700 text-white text-sm px-3 py-1 rounded-full mr-2 mb-2';
+                        span.textContent = descEl.textContent.trim();
+                        modalBody.appendChild(span);
+                    }
+                } else {
+                    const span = document.createElement('span');
+                    span.className = 'inline-block bg-slate-700 text-white text-sm px-3 py-1 rounded-full mr-2 mb-2';
+                    span.textContent = 'No description available.';
+                    modalBody.appendChild(span);
+                }
+
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            });
+
+            card.appendChild(btn);
+        });
+
+        // Filter logic with show-more integration
+        const filterBtns = Array.from(document.querySelectorAll('#filterBar .filter-btn'));
+        const viewMoreBtn = document.getElementById("viewMoreBtn");
+        const threshold = 6;
+        let currentFilter = 'all';
+        let expanded = false;
+
+        function updateShowMore(matchingCards) {
+            if (!viewMoreBtn) return;
+            if (matchingCards.length <= threshold) {
+                viewMoreBtn.style.display = 'none';
+                // ensure all matching cards visible
+                matchingCards.forEach(c => c.style.display = '');
+                expanded = false;
+                viewMoreBtn.dataset.expanded = 'false';
+                viewMoreBtn.innerText = 'Show More';
+            } else {
+                viewMoreBtn.style.display = '';
+                viewMoreBtn.dataset.expanded = expanded ? 'true' : 'false';
+                viewMoreBtn.innerText = expanded ? 'Show Less' : 'Show More';
+
+                if (expanded) {
+                    matchingCards.forEach(c => c.style.display = '');
+                } else {
+                    matchingCards.forEach((c, idx) => {
+                        c.style.display = idx < threshold ? '' : 'none';
+                    });
+                }
+            }
+        }
+
+        function applyFilter(filter) {
+            const matching = [];
+            allCards.forEach(card => {
+                const cat = (card.dataset.category || '').toLowerCase();
+                const isMatch = (filter === 'all' || !filter) ? true : cat.includes(filter);
+                if (isMatch) {
+                    matching.push(card);
+                }
+                // hide non-matching immediately
+                card.style.display = isMatch ? '' : 'none';
+            });
+
+            updateShowMore(matching);
+        }
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // reset styles
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-yellow-400', 'text-black');
+                    b.classList.add('bg-transparent');
+                });
+
+                // set active
+                btn.classList.add('bg-yellow-400', 'text-black');
+                btn.classList.remove('bg-transparent');
+
+                currentFilter = (btn.dataset.filter || 'all').toLowerCase();
+                expanded = false;
+                applyFilter(currentFilter);
+            });
+        });
+
+        // activate the "all" filter by default
+        const defaultBtn = document.querySelector('#filterBar .filter-btn[data-filter="all"]');
+        if (defaultBtn) defaultBtn.click();
+
+        // wire up show-more button
+        if (viewMoreBtn) {
+            viewMoreBtn.addEventListener('click', () => {
+                expanded = !(viewMoreBtn.dataset.expanded === 'true');
+                viewMoreBtn.dataset.expanded = expanded ? 'true' : 'false';
+                // re-apply current filter to show/hide correctly
+                applyFilter(currentFilter);
+            });
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal || e.target.classList.contains('modal-close')) closeModal();
+        });
+    })();
+
+    currentYear = new Date().getFullYear();
+    document.getElementById("currentYear").textContent = currentYear;
+</script>
+
+</html>
