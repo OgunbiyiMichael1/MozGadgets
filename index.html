@@ -99,6 +99,18 @@
         border-radius: 0.6rem;
         display: block;
     }
+    /* Reduce modal image height on small screens for better fit */
+    @media (max-width: 640px) {
+        .modal-image {
+            height: 50vh;
+            max-height: 50vh;
+        }
+        .modal-content {
+            max-width: 95%;
+            width: 96%;
+            padding: 1rem;
+        }
+    }
     .view-details-btn {
         cursor: pointer;
     }
@@ -229,7 +241,7 @@
                 Upgrade Your Everyday Life with Our <br class="hidden md:block">
                 Premium Gadget Collection
             </h3>
-            <p class="mb-10 pt-5 text-xl text-gray-300 italic">Please contact <a href="https://wa.me/2349069558651" class="text-yellow-600">Mozgadgets</a> to purchase any of these products.</p>
+            <p class="mb-10 pt-5 text-xl text-gray-300 italic">Please contact <a href="https://wa.me/234 903 924 2803" class="text-yellow-600">Mozgadgets</a> to purchase any of these products.</p>
 
             <!-- Filter Bar -->
             <div class="flex flex-wrap gap-3 justify-center mb-8" id="filterBar">
@@ -239,13 +251,13 @@
                 <button data-filter="samsung" class="filter-btn bg-transparent border border-slate-600 text-white px-4 py-2 rounded-full cursor-pointer">Samsung</button>
                 <button data-filter="laptops" class="filter-btn bg-transparent border border-slate-600 text-white px-4 py-2 rounded-full cursor-pointer">Laptops</button>
                 <button data-filter="watches" class="filter-btn bg-transparent border border-slate-600 text-white px-4 py-2 rounded-full cursor-pointer">Watches</button>
-                <button data-filter="headphones" class="filter-btn bg-transparent border border-slate-600 text-white px-4 py-2 rounded-full cursor-pointer">Headphones</button>
+                <button data-filter="head" class="filter-btn bg-transparent border border-slate-600 text-white px-4 py-2 rounded-full cursor-pointer">Headphones</button>
             </div>
 
 
 
-            <!-- FIRST PRODUCTS -->
-            <div id="initialProducts" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+            <!-- PRODUCTS (single grid) -->
+            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
 
                 <!-- Product 1 -->
                 <div
@@ -256,10 +268,14 @@
 
                     <h4 class="text-xl font-semibold mb-2">Iphone 17 Air (eSIMFU) </h4>
                     <div class="text-gray-300 text-sm space-y-2">
-                        <p>256GB / 512GB Storage</p>
-                        <p>eSIM Only</p>
-                        <p>Ultra-Slim Titanium Design</p>
-                        <p>Apple A19 Chip</p>
+                        <p>Display: 6.1" Super Retina OLED, HDR10+</p>
+                        <p>Chip: Apple A19 — fast single-chip performance for apps & gaming</p>
+                        <p>Storage: 256GB / 512GB options</p>
+                        <p>SIM: eSIM-only configuration (perfect for digital carriers)</p>
+                        <p>Battery: All-day battery with fast 30W wired charging support — approximate real-world use: 16–20 hours mixed use</p>
+                        <p>Battery Health (used units): typically 85%+</p>
+                        <p>Build: Ultra-slim titanium frame, IP68 water/dust resistance</p>
+                        <p>Condition: UK used & brand new units available — warranty on request</p>
                     </div>
                 </div>
 
@@ -282,7 +298,7 @@
 
                 <!-- Product 3 -->
                 <div
-                    data-category="headphones"
+                    data-category="head"
                     class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
 
                     <img src="headphones.jpeg" alt="Headphones" class="mx-auto mb-4 ">
@@ -319,19 +335,63 @@
                     data-category="phones iphone"
                     class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
 
-                    <img src="Iphone 15 pro max.jpg" alt="iPhone 15 Pro Max" class="mx-auto mb-4  ">
+                    <img src="Iphone 17 pro max.jpg" alt="iPhone 17 Pro Max" class="mx-auto mb-4  ">
 
-                    <h4 class="text-xl font-semibold mb-4">iPhone 15 Pro Max</h4>
-
+                    <h4 class="text-xl font-semibold mb-4">iPhone 17 Pro Max</h4>
                     <div class="text-gray-300 text-sm space-y-2">
-                        <p>256GB Storage</p>
-                        <p>Physical SIM + eSIM</p>
-                        <p>UK Variant 🇬🇧</p>
-                        <p>A17 Pro Chip</p>
+                        <p>Display: 6.9" Super Retina XDR OLED, ProMotion 120Hz, Always-On</p>
+                        <p>Chip: Apple A19 Pro — high-end performance for pro workflows</p>
+                        <p>Cameras: Triple pro system with LiDAR, improved low-light sensors</p>
+                        <p>Storage: 128GB / 256GB / 512GB / 1TB</p>
+                        <p>SIM: Physical SIM + eSIM support (region-dependent)</p>
+                        <p>Battery & Charging: Large battery, fast wired and MagSafe wireless charging — expected real-world battery life: ~24–30 hours mixed use</p>
+                        <p>Battery Health (used units): commonly 88–95% for graded units</p>
+                        <p>Extras: Dynamic Island, Face ID, IP68, UK used & brand new grading options</p>
+                        <p>Warranty: Short-term warranty available on most units</p>
                     </div>
                 </div>
 
-                <!-- Product 2 -->
+                <!-- iPhone 17 Pro -->
+                <div
+                    data-category="phones iphone"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+
+                    <img src="iphone 17 pro.jpg" alt="iPhone 17 Pro" class="mx-auto mb-4">
+
+                    <h4 class="text-xl font-semibold mb-4">iPhone 17 Pro</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.3" Pro OLED, 120Hz ProMotion</p>
+                        <p>Chip: Apple A19 Pro for sustained high performance</p>
+                        <p>Cameras: Pro triple camera setup with advanced computational photography</p>
+                        <p>Storage: 128 / 256 / 512 / 1TB</p>
+                        <p>SIM: Physical + eSIM options; EU/UK variants available</p>
+                        <p>Battery: Efficient battery with expected real-world life ~20–26 hours mixed use</p>
+                        <p>Battery Health (used units): typically 88%+</p>
+                        <p>Extras: Dynamic Island, Ceramic Shield, IP68 water resistance</p>
+                        <p>Condition: Brand new and carefully graded UK used units</p>
+                    </div>
+                </div>
+
+                <!-- From previous hidden list: iPhone 15 Pro Max -->
+                <div
+                    data-category="phones iphone"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+
+                    <img src="Iphone 15 pro max.jpg" alt="iPhone 15 Pro Max" class="mx-auto mb-4  ">
+
+                    <h4 class="text-xl font-semibold mb-4">iPhone 15 Pro Max</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.7" OLED, ProMotion 120Hz</p>
+                        <p>Chip: Apple A17 Pro — excellent for graphics and multitasking</p>
+                        <p>Cameras: Pro sensor for crisp wide & telephoto shots</p>
+                        <p>Storage: 256GB (other capacities may be available)</p>
+                        <p>SIM: Physical + eSIM; UK/International variants in stock</p>
+                        <p>Battery: Strong endurance — typical real-world use ~20–28 hours</p>
+                        <p>Battery Health (used units): commonly 88%–95% depending on grade</p>
+                        <p>Condition: Brand new and verified UK-used units</p>
+                    </div>
+                </div>
+
                 <div
                     data-category="phones iphone"
                     class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
@@ -339,29 +399,19 @@
                     <img src="iphone 14 pro.jpg" alt="iPhone 14 Pro" class="mx-auto mb-4">
 
                     <h4 class="text-xl font-semibold mb-4">iPhone 14 Pro</h4>
-
                     <div class="text-gray-300 text-sm space-y-2">
-                        <p>128GB Storage</p>
-                        <p>Physical SIM + eSIM</p>
-                        <p>UK Variant 🇬🇧</p>
-                        <p>Dynamic Island</p>
+                        <p>Display: 6.1" Super Retina XDR OLED, Dynamic Island</p>
+                        <p>Chip: A16 Bionic — smooth performance for everyday use</p>
+                        <p>Cameras: 48MP main with excellent low-light Capture</p>
+                        <p>Storage: 128GB (other sizes on request)</p>
+                        <p>SIM: Physical + eSIM supported; UK variants available</p>
+                        <p>Battery: Good all-day battery — typical real-world use ~16–22 hours</p>
+                        <p>Battery Health (used units): usually 85%+</p>
+                        <p>Condition: Grade A UK used & brand new options</p>
                     </div>
                 </div>
 
-                
-                
-            </div>
-
-            <!-- HIDDEN PRODUCTS -->
-
-
-            <div id="moreProducts"
-                class="grid  grid-cols-1 sm:grid-cols-2 mt-12 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center ">
-
-                <!-- Product 1 -->
-                
-
-                <!-- Product 3 -->
+                <!-- iPhone 13 -->
                 <div
                     data-category="iphone phones"
                     class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
@@ -369,16 +419,19 @@
                     <img src="iphone 13.jpeg" alt="iPhone 13" class="mx-auto mb-4">
 
                     <h4 class="text-xl font-semibold mb-4">iPhone 13</h4>
-
                     <div class="text-gray-300 text-sm space-y-2">
-                        <p>256GB Storage</p>
-                        <p>Physical SIM + eSIM</p>
-                        <p>UK Variant 🇬🇧</p>
-                        <p>Super Retina XDR Display</p>
+                        <p>Display: 6.1" Super Retina XDR</p>
+                        <p>Chip: A15 Bionic — reliable performance for apps & photos</p>
+                        <p>Storage: 256GB (other options may be available)</p>
+                        <p>SIM: Physical + eSIM</p>
+                        <p>Cameras: Dual 12MP system with Cinematic mode</p>
+                        <p>Battery: Expected real-world use ~14–18 hours mixed use</p>
+                        <p>Battery Health (used units): often 80–90% depending on grade</p>
+                        <p>Condition: Professionally inspected UK used units</p>
                     </div>
                 </div>
 
-                <!-- Product 4 -->
+                <!-- iPhone 12 Pro Max -->
                 <div
                     data-category="iphone phones"
                     class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
@@ -386,77 +439,355 @@
                     <img src="iphone 12 pro max.jpg" alt="iPhone 12 Pro Max" class="mx-auto mb-4">
 
                     <h4 class="text-xl font-semibold mb-4">iPhone 12 Pro Max</h4>
-
                     <div class="text-gray-300 text-sm space-y-2">
-                        <p>256GB Storage</p>
-                        <p>Physical SIM + eSIM</p>
-                        <p>UK Variant 🇬🇧</p>
-                        <p>Triple Camera System</p>
+                        <p>Display: 6.7" Super Retina XDR</p>
+                        <p>Chip: A14 Bionic — still strong for everyday tasks</p>
+                        <p>Storage: 256GB (others possible)</p>
+                        <p>Cameras: Triple camera array with LiDAR for depth</p>
+                        <p>SIM: Physical SIM + eSIM support</p>
+                        <p>Battery: Good endurance — typical real-world ~16–20 hours mixed use</p>
+                        <p>Battery Health (used units): generally 80–90% depending on grade</p>
+                        <p>Condition: Grade A UK used units with battery health verified</p>
                     </div>
                 </div>
 
-<div class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center hover:scale-105 transition duration-300 w-full max-w-xs"
-data-category="samsung phones">
+                <!-- Samsung S23 Ultra -->
+                <div class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center hover:scale-105 transition duration-300 w-full max-w-xs"
+                data-category="samsung phones">
 
-    <img src="s23 ultra.jpg" alt="Samsung S23 Ultra" class="mx-auto mb-4">
+                    <img src="s23 ultra.jpg" alt="Samsung S23 Ultra" class="mx-auto mb-4">
 
-    <h4 class="text-xl font-semibold mb-4">Samsung S23 Ultra</h4>
+                    <h4 class="text-xl font-semibold mb-4">Samsung S23 Ultra</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.8" Dynamic AMOLED 2X, 120Hz</p>
+                        <p>Chip: Snapdragon/Exynos (region dependent) — flagship performance</p>
+                        <p>Cameras: 200MP main sensor, versatile zoom & night modes</p>
+                        <p>Storage: 256GB / 512GB</p>
+                        <p>Battery: Large battery — typical real-world use ~18–26 hours mixed use</p>
+                        <p>Battery Health (used units): commonly 85%+</p>
+                        <p>Extras: S-Pen support (where applicable), UK used & brand new units</p>
+                        <p>Condition: Inspected & graded; warranty available on select units</p>
+                    </div>
+                </div>
 
-    <div class="text-gray-300 text-sm space-y-2">
-        <p>256GB / 512GB Storage</p>
-        <p>UK Used 🇬🇧 &amp; Brand New</p>
-        <p>200MP Pro Camera</p>
-        <p>Snapdragon Performance</p>
-    </div>
-</div>
+                <!-- Samsung S24 Ultra -->
+                <div class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center hover:scale-105 transition duration-300 w-full max-w-xs"
+                data-category="samsung phones">
 
-<div class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center hover:scale-105 transition duration-300 w-full max-w-xs"
-data-category="samsung phones">
+                    <img src="s24ultra.jpg" alt="Samsung S24 Ultra" class="mx-auto mb-4">
 
-    <img src="s24ultra.jpg" alt="Samsung S24 Ultra" class="mx-auto mb-4">
+                    <h4 class="text-xl font-semibold mb-4">Samsung S24 Ultra</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.8" Dynamic AMOLED 2X, 120Hz, LTPO</p>
+                        <p>Processor: Latest Snapdragon/Exynos depending on region</p>
+                        <p>Cameras: High-resolution pro sensors with advanced computational imaging</p>
+                        <p>Storage: 256GB (other capacities may be available)</p>
+                        <p>Build: Premium materials (titanium where available), IP68</p>
+                        <p>Condition: Brand new and verified UK used options</p>
+                    </div>
+                </div>
 
-    <h4 class="text-xl font-semibold mb-4">Samsung S24 Ultra</h4>
+                <!-- Samsung Fold 5 -->
+                <div class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center hover:scale-105 transition duration-300 w-full max-w-xs"
+                data-category="samsung phones">
 
-    <div class="text-gray-300 text-sm space-y-2">
-        <p>256GB Storage</p>
-        <p>Galaxy AI Features</p>
-        <p>Titanium Frame Design</p>
-        <p>UK Used 🇬🇧 &amp; Brand New</p>
-    </div>
-</div>
+                    <img src="samsung fold 5.jpg" alt="Samsung Fold 5" class="mx-auto mb-4">
 
-<div class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center hover:scale-105 transition duration-300 w-full max-w-xs"
-data-category="samsung phones">
+                    <h4 class="text-xl font-semibold mb-4">Samsung Fold 5</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: Foldable AMOLED main display + cover display, optimized multitasking</p>
+                        <p>Chip: Flagship-tier processor for smooth folding UX</p>
+                        <p>Storage: 256GB / 512GB</p>
+                        <p>Battery: Due to foldable design expect ~10–16 hours mixed use (varies with multitasking)</p>
+                        <p>Battery Health (used units): commonly 80–90% after inspection</p>
+                        <p>Use-cases: Multitasking, tablet-like productivity, S Pen support in some variants</p>
+                        <p>Condition: UK used & brand new units; devices inspected for hinge and screen health</p>
+                    </div>
+                </div>
 
-    <img src="samsung fold 5.jpg" alt="Samsung Fold 5" class="mx-auto mb-4">
+                <!-- Samsung Note 20 Ultra -->
+                <div
+                    data-category="samsung phones"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
 
-    <h4 class="text-xl font-semibold mb-4">Samsung Fold 5</h4>
+                    <img src="samsung note 20 ultra.jpg" alt="Samsung Note 20 Ultra" class="mx-auto mb-4">
 
-    <div class="text-gray-300 text-sm space-y-2">
-        <p>256GB / 512GB Storage</p>
-        <p>Foldable AMOLED Display</p>
-        <p>Premium Multitasking</p>
-        <p>UK Used 🇬🇧 &amp; Brand New</p>
-    </div>
-</div>
+                    <h4 class="text-xl font-semibold mb-4">Samsung Note 20 Ultra</h4>
 
-<!-- Samsung Product 4 -->
-<div
-    data-category="samsung phones"
-    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.9" Dynamic AMOLED, 120Hz</p>
+                        <p>S-Pen: Integrated S-Pen for notes and precision input</p>
+                        <p>Storage: 128GB / 256GB</p>
+                        <p>Battery: Large battery — expected real-world use ~18–24 hours mixed use</p>
+                        <p>Battery Health (used units): commonly 82–90% after inspection</p>
+                        <p>Features: Pro-level camera, large battery, flagship hardware for productivity</p>
+                        <p>Condition: Inspected, UK used & brand new options</p>
+                    </div>
 
-    <img src="samsung note 20 ultra.jpg" alt="Samsung Note 20 Ultra" class="mx-auto mb-4">
+                </div>
 
-    <h4 class="text-xl font-semibold mb-4">Samsung Note 20 Ultra</h4>
+                <!-- NEW: iPhone 17 Plus -->
+                <div
+                    data-category="phones iphone"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+                    <img src="iphone 17 plus.jpg" alt="iPhone 17 Plus" class="mx-auto mb-4">
+                    <h4 class="text-xl font-semibold mb-4">iPhone 17 Plus</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: Large 6.8" Super Retina OLED — great for media and gaming</p>
+                        <p>Chip: Apple A19 — balanced power and efficiency</p>
+                        <p>Storage: 256GB / 512GB</p>
+                        <p>SIM: Physical + eSIM support</p>
+                        <p>Cameras: Advanced multi-lens system with enhanced stabilization</p>
+                        <p>Battery: Large battery — expected real-world use ~22–28 hours mixed use</p>
+                        <p>Battery Health (used units): typically 88–95% for graded devices</p>
+                        <p>Extras: Dynamic Island, Face ID, IP68</p>
+                    </div>
+                </div>
 
-    <div class="text-gray-300 text-sm space-y-2">
-        <p>128GB / 256GB Storage</p>
-        <p>S-Pen Productivity</p>
-        <p>120Hz AMOLED Display</p>
-        <p>UK Used 🇬🇧 & Brand New</p>
-    </div>
+                <!-- NEW: iPhone 17 -->
+                <div
+                    data-category="phones iphone"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+                    <img src="iphone 17.jpg" alt="iPhone 17" class="mx-auto mb-4">
+                    <h4 class="text-xl font-semibold mb-4">iPhone 17</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.1" Super Retina OLED, crisp colors</p>
+                        <p>Chip: Apple A19 — modern performance for daily apps</p>
+                        <p>Storage: 128 / 256 / 512GB</p>
+                        <p>SIM: eSIM and physical SIM variants available</p>
+                        <p>Camera: Improved main sensor and computational photography features</p>
+                        <p>Battery: Expected real-world use ~16–22 hours mixed use</p>
+                        <p>Battery Health (used units): typically 88%+</p>
+                        <p>Condition: Brand new and UK used stock with battery health checks</p>
+                    </div>
+                </div>
 
-</div>
+                <!-- NEW: iPhone 16 Pro Max -->
+                <div
+                    data-category="phones iphone"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+                    <img src="iphone 16 pro max.jpg" alt="iPhone 16 Pro Max" class="mx-auto mb-4">
+                    <h4 class="text-xl font-semibold mb-4">iPhone 16 Pro Max</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.9" Pro OLED with 120Hz ProMotion</p>
+                        <p>Chip: Apple A18 Pro — strong single-core and GPU performance</p>
+                        <p>Storage: 256 / 512 / 1TB</p>
+                        <p>SIM: Physical + eSIM</p>
+                        <p>Camera: Pro camera system with optical zoom and advanced stabilization</p>
+                        <p>Extras: MagSafe, IP68, tested battery health for used units</p>
+                    </div>
+                </div>
+
+                <!-- NEW: iPhone 16 Pro -->
+                <div
+                    data-category="phones iphone"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+                    <img src="iphone 16 pro.jpg" alt="iPhone 16 Pro" class="mx-auto mb-4">
+                    <h4 class="text-xl font-semibold mb-4">iPhone 16 Pro</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.3" Pro OLED with adaptive 120Hz</p>
+                        <p>Chip: Apple A18 Pro — optimized for pro apps and gaming</p>
+                        <p>Storage: 128 / 256 / 512GB</p>
+                        <p>SIM: Physical + eSIM supported</p>
+                        <p>Camera: Pro sensors with enhanced computational modes</p>
+                        <p>Condition: Carefully graded and inspected units</p>
+                    </div>
+                </div>
+
+                <!-- NEW: iPhone 16 Plus -->
+                <div
+                    data-category="phones iphone"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+                    <img src="iphone 16 plus.jpeg" alt="iPhone 16 Plus" class="mx-auto mb-4">
+                    <h4 class="text-xl font-semibold mb-4">iPhone 16 Plus</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.7" Super Retina OLED, excellent for media</p>
+                        <p>Chip: Apple A18 — efficient and powerful</p>
+                        <p>Storage: 256 / 512GB</p>
+                        <p>SIM: Physical + eSIM options</p>
+                        <p>Camera: Reliable multi-lens setup with good low-light performance</p>
+                        <p>Condition: New and inspected used stock available</p>
+                    </div>
+                </div>
+
+                <div
+                    data-category="phones iphone"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+                    <img src="iphone 16.webp" alt="iPhone 16" class="mx-auto mb-4">
+                    <h4 class="text-xl font-semibold mb-4">iPhone 16</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.1" Super Retina OLED</p>
+                        <p>Chip: Apple A18 — smooth UI and great battery efficiency</p>
+                        <p>Storage: 256 / 512GB</p>
+                        <p>SIM: Physical + eSIM supported</p>
+                        <p>Camera: Upgraded main sensor and improved Smart HDR</p>
+                        <p>Battery: Efficient battery — expected real-world use ~16–22 hours mixed use</p>
+                        <p>Battery Health (used units): typically 88%+ (reported on inspected units)</p>
+                        <p>Condition: Tested units, battery health reported for used devices</p>
+                    </div>
+                </div>
+
+                <!-- NEW: Samsung S25 Ultra -->
+                <div
+                    data-category="samsung phones"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+                    <img src="s25 ultra.jpg" alt="Samsung S25 Ultra" class="mx-auto mb-4">
+                    <h4 class="text-xl font-semibold mb-4">Samsung S25 Ultra</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.8" Dynamic AMOLED 2X, 120Hz, LTPO for adaptive refresh</p>
+                        <p>Processor: Latest flagship silicon (region-dependent)</p>
+                        <p>Cameras: Professional multi-sensor array with advanced AI image processing</p>
+                        <p>Storage: 512GB / 1TB</p>
+                        <p>Battery & Charging: Fast wired & wireless charging, large battery capacity — expected real-world use ~22–30 hours mixed use</p>
+                        <p>Battery Health (used units): typically 88%+</p>
+                        <p>Condition: Brand new & inspected UK used units; full camera & screen checks</p>
+                    </div>
+                </div>
+
+                <div
+                    data-category="samsung phones"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+                    <img src="samsung s22.jpg" alt="Samsung S22" class="mx-auto mb-4">
+                    <h4 class="text-xl font-semibold mb-4">Samsung S22</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.1" Dynamic AMOLED 2X</p>
+                        <p>Processor: Flagship-class chip (region dependent)</p>
+                        <p>Storage: 128GB / 256GB (some listings show 512GB)</p>
+                        <p>Battery: Typical real-world use ~14–18 hours mixed use</p>
+                        <p>Battery Health (used units): commonly 80–90%</p>
+                        <p>Condition: UK used & brand new options; units inspected before sale</p>
+                    </div>
+                </div>
+
+                <div
+                    data-category="samsung phones"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+                    <img src="samsung s22 ultra.webp" alt="Samsung S22 Ultra" class="mx-auto mb-4">
+                    <h4 class="text-xl font-semibold mb-4">Samsung S22 Ultra</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.8" Dynamic AMOLED 2X, 120Hz</p>
+                        <p>Processor: Flagship-class chipset (region dependent)</p>
+                        <p>Storage: 256GB / 512GB / 1TB options</p>
+                        <p>Battery: Strong endurance — expected real-world use ~18–24 hours</p>
+                        <p>Battery Health (used units): commonly 82–92%</p>
+                        <p>Condition: UK used & brand new options; S-Pen support on Ultra models</p>
+                    </div>
+                </div>
+
+                <div
+                    data-category="samsung phones"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+                    <img src="samsung s22 plus.jpg" alt="Samsung S22 plus" class="mx-auto mb-4">
+                    <h4 class="text-xl font-semibold mb-4">Samsung S22 Plus</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.6" Dynamic AMOLED 2X</p>
+                        <p>Processor: Flagship silicon (region dependent)</p>
+                        <p>Storage: 128 / 256 / 512GB options</p>
+                        <p>Battery: Typical real-world use ~16–20 hours mixed use</p>
+                        <p>Battery Health (used units): usually 80–90%</p>
+                        <p>Condition: UK used & brand new options</p>
+                    </div>
+                </div>
+
+                <div
+                    data-category="samsung phones"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+                    <img src="samsung s21 ultra.jpg" alt="Samsung S21 Ultra" class="mx-auto mb-4">
+                    <h4 class="text-xl font-semibold mb-4">Samsung S21 Ultra</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.8" Dynamic AMOLED, 120Hz</p>
+                        <p>Processor: Previous-generation flagship chip</p>
+                        <p>Storage: 128 / 256 / 512GB options</p>
+                        <p>Battery: Expected real-world use ~16–22 hours</p>
+                        <p>Battery Health (used units): commonly 80–90%</p>
+                        <p>Condition: UK used & brand new options; fully inspected</p>
+                    </div>
+                </div>
+
+                <div
+                    data-category="samsung phones"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+                    <img src="samsung s21.jpg" alt="Samsung S21" class="mx-auto mb-4">
+                    <h4 class="text-xl font-semibold mb-4">Samsung S21</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.2" Dynamic AMOLED</p>
+                        <p>Processor: Flagship-era silicon</p>
+                        <p>Storage: 128 / 256 / 512GB</p>
+                        <p>Battery: Typical real-world use ~14–18 hours</p>
+                        <p>Battery Health (used units): typically 80–90%</p>
+                        <p>Condition: UK used & brand new options; inspected before sale</p>
+                    </div>
+                </div>
+
+                <div
+                    data-category="samsung phones"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+                    <img src="samsung flip 3.jpg" alt="Samsung Flip 3" class="mx-auto mb-4">
+                    <h4 class="text-xl font-semibold mb-4">Samsung Galaxy Z Flip 3</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.7" Foldable AMOLED main display, compact cover display</p>
+                        <p>Storage: 128 / 256 / 512GB depending on listing</p>
+                        <p>Battery: Smaller battery due to foldable design — typical real-world use ~8–14 hours mixed use</p>
+                        <p>Battery Health (used units): commonly 75–88% depending on age</p>
+                        <p>Condition: UK used & brand new options; hinge and screen fully inspected for used units</p>
+                    </div>
+                </div>
+
+                <div
+                    data-category="samsung phones"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+                    <img src="samsung flip 4.jpg" alt="Samsung Flip 4" class="mx-auto mb-4">
+                    <h4 class="text-xl font-semibold mb-4">Samsung Galaxy Z Flip 4</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.7" Foldable AMOLED main display, compact cover display</p>
+                        <p>Storage: 128 / 256 / 512GB</p>
+                        <p>Battery: Typical real-world use ~9–15 hours</p>
+                        <p>Battery Health (used units): commonly 78–90%</p>
+                        <p>Condition: UK used & brand new options; hinge & screen inspected for used units</p>
+                    </div>
+                </div>
+
+                <div
+                    data-category="samsung phones"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+                    <img src="samsung flip 5.jpg" alt="Samsung Flip 5" class="mx-auto mb-4">
+                    <h4 class="text-xl font-semibold mb-4">Samsung Galaxy Z Flip 5</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.7" Foldable AMOLED main display, improved cover screen</p>
+                        <p>Storage: 128 / 256 / 512GB options</p>
+                        <p>Battery: Typical real-world use ~9–16 hours depending on usage</p>
+                        <p>Battery Health (used units): commonly 80–92%</p>
+                        <p>Condition: UK used & brand new options; hinge & screen checks performed</p>
+                    </div>
+                </div>
+                
+                <div
+                    data-category="samsung phones"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+                    <img src="samsung flip 6.jpg" alt="Samsung Flip 6" class="mx-auto mb-4">
+                    <h4 class="text-xl font-semibold mb-4">Samsung Galaxy Z Flip 6</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.7" Foldable AMOLED main display, enhanced cover display</p>
+                        <p>Storage: 128 / 256 / 512GB</p>
+                        <p>Battery: Typical real-world use ~9–16 hours</p>
+                        <p>Battery Health (used units): commonly 80–92%</p>
+                        <p>Condition: UK used & brand new options; hinge & display inspected on used units</p>
+                    </div>
+                </div>
+
+                <div
+                    data-category="samsung phones"
+                    class="bg-gray-800 rounded-2xl shadow-lg card p-6 text-center transition duration-300 w-full max-w-xs card">
+                    <img src="samsung flip 7.jpg" alt="Samsung Flip 7" class="mx-auto mb-4">
+                    <h4 class="text-xl font-semibold mb-4">Samsung Galaxy Z Flip 7</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>Display: 6.7" Foldable AMOLED main display, latest cover display improvements</p>
+                        <p>Storage: 128 / 256 / 512GB</p>
+                        <p>Battery: Typical real-world use ~10–18 hours depending on use</p>
+                        <p>Battery Health (used units): commonly 80–92%</p>
+                        <p>Condition: UK used & brand new options; thorough hinge and screen checks</p>
+                    </div>
+                </div>
 
             </div>
 
