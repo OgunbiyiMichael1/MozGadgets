@@ -141,6 +141,40 @@
     .card:hover img {
         transform: scale(1.06);
     }
+    .slider{
+            overflow: hidden;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide-track{
+            display: flex;
+            gap: 50px;
+            animation: scroll 10s linear infinite;
+        }
+        @media (max-width: 640px) {
+            .slide-track {
+                gap: 30px;
+                animation: scroll 5s linear infinite;
+            }
+        }
+        .slide-track p{
+            font-size: 20px;
+            font-weight: bold;
+        }  
+        .slider:hover .slide-track{
+            animation-play-state: paused ;
+        }
+        @keyframes scroll{
+            from{
+                transform: translateX(0);
+            }
+            to{
+                transform: translateX(50%);
+            }
+        }
 </style>
 
 <body class="bg-black text-white">
@@ -260,9 +294,13 @@
                 Upgrade Your Everyday Life with Our <br class="hidden md:block">
                 Premium Gadget Collection
             </h3>
-            <p class="mb-10 pt-5 text-xl text-gray-300 italic">Please contact <a href="https://wa.me/234 903 924 2803"
+            <div class="slider">
+        <div class="slide-track">
+           <p class="mb-10 pt-5 text-xl text-gray-300 italic">Please contact <a href="https://wa.me/234 903 924 2803"
                     class="text-yellow-600">Mozgadgets</a> to purchase any of these products.</p>
-
+        </div>
+    </div>
+            
             <!-- Filter Bar -->
             <div class="flex flex-wrap gap-3 justify-center mb-8" id="filterBar">
                 <button data-filter="all" class="filter-btn bg-slate-700 text-white px-4 py-2 rounded-full">All</button>
